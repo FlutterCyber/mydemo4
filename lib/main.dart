@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:mydemo4/pages/home_page.dart';
+import 'package:mydemo4/pages/new_page.dart';
 
 void main() {
   runApp(MyApp());
@@ -17,7 +18,8 @@ class MyApp extends StatelessWidget {
       ),
       home:HomePage(),
       routes: {
-
+        HomePage.id:(context)=>HomePage(),
+        NewPage.id:(context)=>NewPage()
       },
     );
   }
