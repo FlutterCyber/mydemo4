@@ -5,15 +5,24 @@ class HomePage extends StatefulWidget {
   @override
   _HomePageState createState() => _HomePageState();
 }
-
 class _HomePageState extends State<HomePage> {
+
+  Future openDetails() async{
+    Navigator.of(context).push(new MaterialPageRoute(
+        builder:(BuildContext context){
+          return new NewPage(name:"Flutter",age: 22);
+        }
+    ));
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Center(
         child: FlatButton(
           onPressed: (){
-            Navigator.pushNamed(context, NewPage.id);
+            openDetails();
+            //Navigator.pushReplacementNamed(context, NewPage.id);
           },
           color: Colors.yellow,
           child: Text("ButtonOne "),
